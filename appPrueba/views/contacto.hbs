@@ -9,31 +9,35 @@
     <div class="container">
       <h2 class="form-signin-heading">Contactanos</h2>
 
-    <form class="form-signin">
+    <form class="form-signin" action="/contacto" method="post">
       <label class="email">E-Mail:</label><br>
-      <input type="email" id="inputEmail" size="40px" placeholder="Email address" required autofocus><br><br>
+      <input type="email" name="txtEmail" size="40px" placeholder="Email address" value="{{txtEmail}}"required autofocus><br><br>
 
       <label>Nombre:</label><br>
-      <input type="text" id="inputEmail" size="40px" placeholder="Kevin"><br><br>
+      <input type="text" name="txtNombre" size="40px" placeholder="Kevin" value="{{txtNombre}}"><br><br>
 
       <label>Apellido:</label><br>
-      <input type="text" id="inputEmail" size="40px" placeholder="Navarro"><br><br>
+      <input type="text" name="txtApellido" size="40px" placeholder="Navarro" value="{{txtApellido}}"><br><br>
 
       <label>Telefono:</label><br>
-      <input type="phone" id="inputEmail" size="40px" placeholder="22224455"><br><br>
+      <input type="number" name="txtTel" placeholder="22224455" value="{{txtTel}}"><br><br>
 
       <label>Comentarios:</label><br>
-      <textarea name="comentarios" rows="5" cols="42"></textarea>
+      <textarea name="comentarios" rows="5" cols="42" value="{{comentarios}}"></textarea>
       <br><br>
     <!--  <div class="checkbox">
         <label>
           <input type="checkbox" value="remember-me"> Remember me
         </label>
       </div>-->
-      <button class="btn btn-lg btn-primary" type="submit">Enviar</button>
+      <input class="btn btn-lg btn-primary" type="submit" name="btnEnviar" value="Enviar">
     </form>
 
   </div> <!-- /container <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
   <label for="inputPassword" class="sr-only">Password</label>-->
+
+  {{#if nombre}}
+    El nombre ingresado fue: {{nombre}}
+  {{/if}}
   </body>
 </html>
